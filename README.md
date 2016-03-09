@@ -59,3 +59,9 @@ legend("topleft", legend=c("w(x)","w-hat(x)","w-hat(y)"), col=2:4, lty=c(1,1,NA)
 ```
 
 ![](README_files/figure-html/unnamed-chunk-6-1.png)
+
+## References
+
+[1] Sugiyama, M., Nakajima, S., Kashima, H., von Bünau, P. & Kawanabe, M. 
+Direct importance estimation with model selection and its application to covariate shift adaptation. 
+
