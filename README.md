@@ -2,13 +2,13 @@
 
 
 
-## KLIEP (Kullback-Leibler Importance Estimation Procedure)
+## 1. KLIEP (Kullback-Leibler Importance Estimation Procedure)
 
 
 ```r
 set.seed(314)
-x <- rnorm(100, 1, 1/8)
-y <- rnorm(100, 1, 1/2)
+x <- rnorm(400, 1, 1/8)
+y <- rnorm(400, 1, 1/2)
 
 plot(function(x) dnorm(x, 1, 1/8), xlim=c(-1, 3), xlab="x", ylab="", lwd=2)
 plot(function(x) dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=4, add=TRUE)
@@ -25,7 +25,7 @@ result <- KLIEP(x, y)
 
 
 ```r
-plot(y, result$y_density_ratio, xlim = c(-1, 3), col = 4, xlab = "x", ylab = "")
+plot(y, result$y_density_ratio, xlim = c(-1, 3), ylim=c(0, 4), col = 4, xlab = "x", ylab = "")
 plot(function(x) result$compute_density_ratio(x)[,1], xlim=c(-1, 3), lwd=2, col=3, add=TRUE)
 plot(function(x) dnorm(x, 1, 1/8) / dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=2, add=TRUE)
 legend("topright", legend=c("w(x)","w-hat(x)","w-hat(y)"), col=2:4, lty=c(1,1,NA), lwd=2, pch=c(NA,NA,1))
