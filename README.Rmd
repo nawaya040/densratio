@@ -1,5 +1,5 @@
 ---
-title: "R Package for Density Ratio Estimation"
+title: "An R Package for Density Ratio Estimation"
 output: 
   html_document:
     keep_md: true

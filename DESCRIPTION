@@ -1,10 +1,10 @@
 Package: densratio
 Type: Package
-Title: Tools for Density Ratio Estimation
+Title: An R Package for Density Ratio Estimation
 Version: 0.0.0.9000
 Author: Koji MAKIYAMA (@hoxo_m)
 Maintainer: Koji MAKIYAMA <hoxo.smile@gmail.com>
-Description: Tools for density ratio estimation.
+Description: An R package for density ratio estimation.
 License: file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1

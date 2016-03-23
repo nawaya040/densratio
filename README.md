@@ -1,4 +1,4 @@
-# R Package for Density Ratio Estimation
+# An R Package for Density Ratio Estimation
 
 
 
