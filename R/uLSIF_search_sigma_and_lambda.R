@@ -1,15 +1,44 @@
-uLSIF_search_sigma_and_lambda <- function(x, y, centers, sigma_list, lambda_list, fold) {
+uLSIF_search_sigma_and_lambda <- function(x, y, centers, sigma_list, lambda_list) {
+  n_x <- nrow(x)
+  n_y <- nrow(y)
+  n_min <- min(n_x, n_y)
+  kernel_num <- nrow(centers)
 
-  n_min <- min(nrow(x), nrow(y))
-
-  score <- Inf
+  score_new <- Inf
   sigma_new <- 0
   lambda_new <- 0
   for (sigma in sigma_list) {
     phi_x <- compute_kernel_Gaussian(x, centers, sigma)
     phi_y <- compute_kernel_Gaussian(y, centers, sigma)
-
-
+    H <- crossprod(phi_y) / n_y
+    h <- colMeans(phi_x)
+    phi_x <- t(head(phi_x, n_min))
+    phi_y <- t(head(phi_y, n_min))
+    for (lambda in lambda_list) {
+      B <- H + diag(lambda * (n_y - 1) / n_y, nrow = kernel_num, ncol = kernel_num)
+      B_inv <- solve(B)
+      B_inv_X <- B_inv %*% phi_y
+      X_B_inv_X <- phi_y * B_inv_X
+      denom <- ones(n_min, value = n_y) - ones(kernel_num) %*% X_B_inv_X
+      B0 <- B_inv %*% (h %*% ones(n_min)) +
+        B_inv_X %*% diag(as.vector((t(h) %*% B_inv_X) / denom))
+      B1 <- B_inv %*% phi_x +
+        B_inv_X %*% diag(as.vector((ones(kernel_num) %*% (phi_x * B_inv_X)) / denom))
+      B2 <- (n_y-1) * (n_x * B0 - B1) / (n_y * (n_x - 1))
+      B2[B2 < 0] <- 0
+      r_y <- t(ones(kernel_num) %*% (phi_y * B2))
+      r_x <- t(ones(kernel_num) %*% (phi_x * B2))
+      score <- (crossprod(r_y) / 2 - ones(n_min) %*% r_x) / n_min
+      if(score < score_new) {
+        score_new <- score
+        sigma_new <- sigma
+        lambda_new <- lambda
+      }
+    }
   }
+  list(sigma = sigma_new, lambda = lambda_new)
+}
 
+ones <- function(size, value=1) {
+  t(rep(value, size))
 }

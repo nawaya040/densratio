@@ -2,25 +2,45 @@
 
 
 
-## 1. KLIEP (Kullback-Leibler Importance Estimation Procedure)
+## 1. Overviews
+
+@Hido2010
+
+@NIPS2007_232
+
+## 2. How to Install
+
+The source code for **densratio** package is available on GitHub at
+
+- https://github.com/hoxo-m/densratio.
+
+You can install the package from there.
 
 
 ```r
-set.seed(314)
-x <- rnorm(400, 1, 1/8)
-y <- rnorm(400, 1, 1/2)
+install.packages("devtools") # if you have not installed "devtools" package
+devtools::install_github("hoxo-m/densratio")
+```
+
+## 3. Usage
+
+
+```r
+set.seed(71)
+x <- rnorm(200, 1, 1/8)
+y <- rnorm(200, 1, 1/2)
 
 plot(function(x) dnorm(x, 1, 1/8), xlim=c(-1, 3), xlab="x", ylab="", lwd=2)
 plot(function(x) dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=4, add=TRUE)
 legend("topright", legend=c("p(x)","p(y)"), col=c(1,4), lwd=2)
 ```
 
-![](README_files/figure-html/unnamed-chunk-1-1.png)
+![](README_files/figure-html/unnamed-chunk-2-1.png)
 
 
 ```r
 library(densratio)
-result <- KLIEP(x, y)
+result <- densratio(x, y)
 ```
 
 
@@ -31,7 +51,7 @@ plot(function(x) dnorm(x, 1, 1/8) / dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=
 legend("topright", legend=c("w(x)","w-hat(x)","w-hat(y)"), col=2:4, lty=c(1,1,NA), lwd=2, pch=c(NA,NA,1))
 ```
 
-![](README_files/figure-html/unnamed-chunk-3-1.png)
+![](README_files/figure-html/unnamed-chunk-4-1.png)
 
 
 ```r
@@ -43,11 +63,11 @@ plot(function(x) dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=4, add=TRUE)
 legend("topleft", legend=c("p(x)","p(y)"), col=c(1,4), lwd=2)
 ```
 
-![](README_files/figure-html/unnamed-chunk-4-1.png)
+![](README_files/figure-html/unnamed-chunk-5-1.png)
 
 
 ```r
-result <- KLIEP(x, y)
+result <- densratio(x, y)
 ```
 
 
@@ -58,10 +78,6 @@ plot(function(x) dnorm(x, 2, 1/4) / dnorm(x, 1, 1/2), xlim=c(-1, 3), lwd=2, col=
 legend("topleft", legend=c("w(x)","w-hat(x)","w-hat(y)"), col=2:4, lty=c(1,1,NA), lwd=2, pch=c(NA,NA,1))
 ```
 
-![](README_files/figure-html/unnamed-chunk-6-1.png)
+![](README_files/figure-html/unnamed-chunk-7-1.png)
 
 ## References
-
-[1] Sugiyama, M., Nakajima, S., Kashima, H., von Bünau, P. & Kawanabe, M. 
-Direct importance estimation with model selection and its application to covariate shift adaptation. 
-

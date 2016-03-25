@@ -2,7 +2,7 @@
 % Please edit documentation in R/KLIEP.R
 \name{KLIEP}
 \alias{KLIEP}
-\title{Estimate Density Ratio p(x)/p(y) by KLIEP(Kullback-Leibler Importance Estimation Procedure)}
+\title{Estimate Density Ratio p(x)/p(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)}
 \usage{
 KLIEP(x, y, sigma = "auto", kernel_num = 100, fold = 5)
 }
@@ -18,6 +18,6 @@ KLIEP(x, y, sigma = "auto", kernel_num = 100, fold = 5)
 \item{fold}{positive integer as fold number for cross validation.}
 }
 \description{
-Estimate Density Ratio p(x)/p(y) by KLIEP(Kullback-Leibler Importance Estimation Procedure)
+Estimate Density Ratio p(x)/p(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)
 }
 
