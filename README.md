@@ -98,7 +98,7 @@ You can find more information in Hido(2011)[1].
 This method estimate density ratio by minimizing Kullback-Leibler divergence.
 You can find more information in Sugiyama(2007)[2].
 
-The both methods assume that the denity ratio is presented by linear model: 
+The both methods assume that the denity ratio is represented by linear model: 
 
 `w(x) = alpha1 * K(x, c1) + alpha2 * K(x, c2) + ... + alphab * K(x, cb)`
 
