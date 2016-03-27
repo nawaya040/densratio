@@ -75,11 +75,11 @@ In this case, `result$compute_density_ratio()` can compute estimated density rat
 
 - **uLSIF** (unconstrained Least-Squares Importance Fitting) is the default method.
 This method estimate density ratio by minimizing the squared loss.
-You can find more information in Hido[1].
+You can find more information in Hido(2011)[1].
 
 - **KLIEP** (Kullback-Leibler Importance Estimation Procedure) is the anothor method.
 This method estimate density ratio by minimizing Kullback-Leibler divergence.
-You can find more information in Sugiyama[2].
+You can find more information in Sugiyama(2007)[2].
 
 The both methods assume that the denity ratio is presented by linear model: 
 
@@ -87,7 +87,7 @@ The both methods assume that the denity ratio is presented by linear model:
 
 where `K(x, c) = exp(- ||x - c||^2 / (2 * sigma ^ 2))` is the Gaussian RBF.
 
-`densratio()` has two main work:
+`densratio()` performs the two main jobs:
 
 - First, deciding kernel parameter `sigma` by cross validation,
 - Second, optimizing kernel weights `alpha`.
