@@ -1,17 +1,17 @@
-#' Estimate Density Ratio p(x)/p(y) by uLSIF (unconstrained Least-Square Importance Fitting)
+#' Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)
 #'
-#' @param x numeric vector or matrix as data from numerator.
-#' @param y numeric vector or matrix as data from denominator.
-#' @param sigma positive scalar as Gaussian kernel bandwidth.
-#' @param lambda positive scalar as regularization parameter.
+#' @param x numeric vector or matrix as data from a numerator distribution p_nu(x).
+#' @param y numeric vector or matrix as data from a denominator distribution p_de(y).
+#' @param method "uLSIF"(default) or "KLIEP".
+#' @param sigma positive numeric vector as a search range of Gaussian kernel bandwidth.
+#' @param lambda positive numeric vector as a search range of regularization parameter for uLSIF.
 #' @param kernel_num positive integer as number of kernels.
-#' @param fold positive integer as fold number for cross validation.
 #'
 #' @export
 uLSIF <- function(x, y,
                   sigma = 10 ^ seq(-3, 1, length.out = 9),
                   lambda = 10 ^ seq(-3, 1, length.out = 9),
-                  kernel_num = 100, fold = 0) {
+                  kernel_num = 100) {
 
   if(is.vector(x)) x <- matrix(x)
   if(is.vector(y)) y <- matrix(y)
@@ -35,9 +35,7 @@ uLSIF <- function(x, y,
   alpha <- solve(H + diag(lambda, kernel_num, kernel_num)) %*% h
   alpha[alpha < 0] <- 0
 
-  result <- list(alpha = alpha,
-                 x_density_ratio = phi_x %*% alpha,
-                 y_density_ratio = phi_y %*% alpha,
+  result <- list(alpha = as.vector(alpha),
                  kernel_info = list(
                    kernel = "Gaussian RBF",
                    kernel_num = kernel_num,
@@ -47,9 +45,11 @@ uLSIF <- function(x, y,
                  compute_density_ratio = function(x) {
                    if(is.vector(x)) x <- matrix(x)
                    phi_x <- compute_kernel_Gaussian(x, centers, sigma)
-                   phi_x %*% alpha
+                   density_ratio <- phi_x %*% alpha
+                   if(is.vector(x)) density_ratio <- density_ratio[,1]
+                   density_ratio
                  }
   )
-  class(result) <- c("uLSIF", "list")
+  class(result) <- c("uLSIF", class(result))
   result
 }

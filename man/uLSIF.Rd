@@ -2,25 +2,25 @@
 % Please edit documentation in R/uLSIF.R
 \name{uLSIF}
 \alias{uLSIF}
-\title{Estimate Density Ratio p(x)/p(y) by uLSIF (unconstrained Least-Square Importance Fitting)}
+\title{Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)}
 \usage{
 uLSIF(x, y, sigma = 10^seq(-3, 1, length.out = 9), lambda = 10^seq(-3, 1,
-  length.out = 9), kernel_num = 100, fold = 0)
+  length.out = 9), kernel_num = 100)
 }
 \arguments{
-\item{x}{numeric vector or matrix as data from numerator.}
+\item{x}{numeric vector or matrix as data from a numerator distribution p_nu(x).}
 
-\item{y}{numeric vector or matrix as data from denominator.}
+\item{y}{numeric vector or matrix as data from a denominator distribution p_de(y).}
 
-\item{sigma}{positive scalar as Gaussian kernel bandwidth.}
+\item{sigma}{positive numeric vector as a search range of Gaussian kernel bandwidth.}
 
-\item{lambda}{positive scalar as regularization parameter.}
+\item{lambda}{positive numeric vector as a search range of regularization parameter for uLSIF.}
 
 \item{kernel_num}{positive integer as number of kernels.}
 
-\item{fold}{positive integer as fold number for cross validation.}
+\item{method}{"uLSIF"(default) or "KLIEP".}
 }
 \description{
-Estimate Density Ratio p(x)/p(y) by uLSIF (unconstrained Least-Square Importance Fitting)
+Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)
 }
 
