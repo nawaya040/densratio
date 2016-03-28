@@ -5,7 +5,7 @@
 \title{Estimate Density Ratio p_nu(x)/p_de(y)}
 \usage{
 densratio(x, y, method = c("uLSIF", "KLIEP"), sigma = "auto",
-  lambda = "auto", kernel_num = 100, fold = 5)
+  lambda = "auto", kernel_num = 100, fold = 5, verbose = TRUE)
 }
 \arguments{
 \item{x}{numeric vector or matrix as data from a numerator distribution p_nu(x).}
@@ -20,9 +20,21 @@ densratio(x, y, method = c("uLSIF", "KLIEP"), sigma = "auto",
 
 \item{kernel_num}{positive integer as number of kernels.}
 
-\item{fold}{positive integer as fold number for cross validation for KLIEP.}
+\item{fold}{positive integer as a numer of the folds of cross validation for KLIEP.}
+
+\item{verbose}{logical(default TRUE).}
+}
+\value{
+densratio object that contains the function to estimate density ratio.
 }
 \description{
 Estimate Density Ratio p_nu(x)/p_de(y)
+}
+\examples{
+set.seed(3)
+x <- rnorm(200, mean = 1, sd = 1/8)
+y <- rnorm(200, mean = 1, sd = 1/2)
+densratio(x, y)
+
 }
 

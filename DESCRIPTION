@@ -1,10 +1,18 @@
 Package: densratio
 Type: Package
+Version: 0.0.1
 Title: An R Package for Density Ratio Estimation
-Version: 0.0.0.9000
-Author: Koji MAKIYAMA (@hoxo_m)
-Maintainer: Koji MAKIYAMA <hoxo.smile@gmail.com>
 Description: An R package for density ratio estimation.
-License: file LICENSE
-LazyData: TRUE
+    The estimated density ratio function can be used in many applications such as
+    the inlier-based outlier detection, covariate shift adaptation and etc.
+Authors@R:
+    person("Koji", "Makiyama", , "hoxo.smile@gmail.com", c("aut", "cre"))
+URL: https://github.com/hoxo-m/densratio
+BugReports: https://github.com/hoxo-m/densratio/issues
+License: MIT + file LICENSE
+Suggests:
+    mvtnorm,
+    knitr,
+    rmarkdown
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr

@@ -1,4 +1,4 @@
-KLIEP_search_sigma <- function(x, y, centers, fold) {
+KLIEP_search_sigma <- function(x, y, centers, fold, verbose = TRUE) {
   nx <- nrow(x)
 
   sigma <- 10
@@ -24,7 +24,7 @@ KLIEP_search_sigma <- function(x, y, centers, fold) {
       }
       score <- score_new
       sigma <- sigma_new
-      message(sprintf("\tsigma = %.5f, score = %f", sigma, score))
+      if(verbose) message(sprintf("  sigma = %.5f, score = %f", sigma, score))
     }
   }
   sigma

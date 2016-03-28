@@ -1,9 +1,12 @@
 ---
 title: "An R Package for Density Ratio Estimation"
-author: Koji MAKIYAMA (@hoxo_m)
-output: 
-  html_document:
-    keep_md: yes
+author: "Koji MAKIYAMA (@hoxo_m)"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{An R Package for Density Ratio Estimation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
@@ -13,15 +16,21 @@ library(mvtnorm)
 
 ## 1. Overview
 
-**Density ratio estimation** is described as follows: for given two data samples `x` and `y` from unknown distributions `p_nu(x)` and `p_de(y)` respectively, estimate `w(x) = p_nu(x) / p_de(x)`, where `x` and `y` are d-dimensional real numbers.
+**Density ratio estimation** is described as follows: for given two data samples $x$ and $y$ from unknown distributions $p_{nu}(x)$ and $p_{de}(y)$ respectively, estimate
 
-The estimated density ratio function `w(x)` can be used in many applications such as the inlier-based outlier detection[1], covariate shift adaptation[2] and etc[3].
+$$
+w(x) = \frac{p_{nu}(x)}{p_{de}(x)}
+$$
+
+where $x$ and $y$ are $d$-dimensional real numbers.
+
+The estimated density ratio function $w(x)$ can be used in many applications such as the inlier-based outlier detection[1], covariate shift adaptation[2] and etc[3].
 
 The package **densratio** provides a function `densratio()` that returns a result has the function to estimate density ratio `compute_density_ratio()`.
 
 For example, 
 
-```{r result, cache=TRUE}
+```{r}
 set.seed(3)
 x <- rnorm(200, mean = 1, sd = 1/8)
 y <- rnorm(200, mean = 1, sd = 1/2)
@@ -31,9 +40,9 @@ result <- densratio(x, y)
 result
 ```
 
-In this case, the true density ratio `w(x)` is known, so we can compare `w(x)` with the estimated density ratio `w-hat(x)`.
+In this case, the true density ratio $w(x)$ is known, so we can compare $w(x)$ with the estimated density ratio $\hat{w}(x)$.
 
-```{r}
+```{r fig.width=5, fig.height=4}
 true_density_ratio <- function(x) dnorm(x, 1, 1/8) / dnorm(x, 1, 1/2)
 estimated_density_ratio <- result$compute_density_ratio
 
@@ -85,14 +94,22 @@ You can find more information in Sugiyama(2007)[2].
 
 The both methods assume that the denity ratio is represented by linear model: 
 
-`w(x) = alpha1 * K(x, c1) + alpha2 * K(x, c2) + ... + alphab * K(x, cb)`
+$$
+w(x) = \alpha_1 K(x, c_1) + \alpha_2 K(x, c_2) + ... + \alpha_b K(x, c_b)
+$$
 
-where `K(x, c) = exp(- ||x - c||^2 / (2 * sigma ^ 2))` is the Gaussian RBF.
+where
+
+$$
+K(x, c) = \exp\left(-\frac{\|x - c\|^2}{2 \sigma ^ 2}\right)
+$$
+
+is the Gaussian RBF.
 
 `densratio()` performs the two main jobs:
 
-- First, deciding kernel parameter `sigma` by cross validation,
-- Second, optimizing kernel weights `alpha`.
+- First, deciding kernel parameter $\sigma$ by cross validation,
+- Second, optimizing kernel weights $\alpha$.
 
 As the result, you can obtain `compute_density_ratio()`.
 
@@ -118,7 +135,7 @@ In the above, the input data samples `x` and `y` were one dimensional.
 
 For example,
 
-```{r cache=TRUE}
+```{r}
 library(densratio)
 library(mvtnorm)
 
@@ -132,7 +149,7 @@ result
 
 Also in this case, we can compare the true density ratio with the estimated density ratio.
 
-```{r fig.height=4}
+```{r fig.width=7, fig.height=4}
 true_density_ratio <- function(x) {
   dmvnorm(x, mean = c(1, 1), sigma = diag(1/8, 2)) /
     dmvnorm(x, mean = c(1, 1), sigma = diag(1/2, 2))
