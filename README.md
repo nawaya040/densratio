@@ -38,8 +38,6 @@ result
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
-## Regularization Parameter(lambda):  0.1 
-## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
 ```
@@ -60,17 +58,24 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. How to Install
 
-The source code for **densratio** package is available on GitHub at
+You can install the **densratio** package from [CRAN](https://cran.r-project.org/web/packages/densratio/).
 
-- https://github.com/hoxo-m/densratio.
 
-You can install the package from there.
+```r
+install.packages("densratio")
+```
+
+You can also install the package from GitHub.
 
 
 ```r
 install.packages("devtools") # if you have not installed "devtools" package
 devtools::install_github("hoxo-m/densratio")
 ```
+
+The source code for **densratio** package is available on GitHub at
+
+- https://github.com/hoxo-m/densratio.
 
 ## 3. Details
 
@@ -133,7 +138,7 @@ As the result, you can obtain `compute_density_ratio()`.
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
-## Regularization Parameter(lambda):  0.1 
+## Regularization Parameter(lambda):  
 ## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
@@ -207,7 +212,7 @@ contour(range, range, z_true, main = "True Density Ratio")
 contour(range, range, z_hat, main = "Estimated Density Ratio")
 ```
 
-![](README_files/figure-html/unnamed-chunk-6-1.png)
+![](README_files/figure-html/unnamed-chunk-7-1.png)
 
 ```r
 par(old_par)
