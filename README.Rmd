@@ -44,16 +44,22 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. How to Install
 
-The source code for **densratio** package is available on GitHub at
+You can install the **densratio** package from [CRAN](https://cran.r-project.org/web/packages/densratio/).
 
-- https://github.com/hoxo-m/densratio.
+```{r eval=FALSE}
+install.packages("densratio")
+```
 
-You can install the package from there.
+You can also install the package from GitHub.
 
 ```{r eval=FALSE}
 install.packages("devtools") # if you have not installed "devtools" package
 devtools::install_github("hoxo-m/densratio")
 ```
+
+The source code for **densratio** package is available on GitHub at
+
+- https://github.com/hoxo-m/densratio.
 
 ## 3. Details
 
