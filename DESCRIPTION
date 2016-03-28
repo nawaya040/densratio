@@ -10,9 +10,13 @@ Authors@R:
 URL: https://github.com/hoxo-m/densratio
 BugReports: https://github.com/hoxo-m/densratio/issues
 License: MIT + file LICENSE
+Imports:
+    utils
 Suggests:
-    mvtnorm,
+    graphics,
     knitr,
-    rmarkdown
+    mvtnorm,
+    rmarkdown,
+    stats
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr

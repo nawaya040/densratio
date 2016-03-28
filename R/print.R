@@ -1,3 +1,4 @@
+#' @importFrom utils str
 #' @export
 print.densratio <- function(x, digits = 3L, ...) {
   cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"),

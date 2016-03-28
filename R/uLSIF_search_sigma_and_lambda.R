@@ -12,8 +12,8 @@ uLSIF_search_sigma_and_lambda <- function(x, y, centers, sigma_list, lambda_list
     phi_y <- compute_kernel_Gaussian(y, centers, sigma)
     H <- crossprod(phi_y) / ny
     h <- colMeans(phi_x)
-    phi_x <- t(head(phi_x, n_min))
-    phi_y <- t(head(phi_y, n_min))
+    phi_x <- t(phi_x[seq_len(n_min), , drop = FALSE])
+    phi_y <- t(phi_y[seq_len(n_min), , drop = FALSE])
     for (lambda in lambda_list) {
       B <- H + diag(lambda * (ny - 1) / ny, nrow = kernel_num, ncol = kernel_num)
       B_inv <- solve(B)
