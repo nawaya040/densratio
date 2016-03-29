@@ -60,17 +60,24 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. How to Install
 
-The source code for **densratio** package is available on GitHub at
+You can install the **densratio** package from CRAN.
 
-- https://github.com/hoxo-m/densratio.
 
-You can install the package from there.
+```r
+install.packages("densratio")
+```
+
+You can also install the package from GitHub.
 
 
 ```r
 install.packages("devtools") # if you have not installed "devtools" package
 devtools::install_github("hoxo-m/densratio")
 ```
+
+The source code for **densratio** package is available on GitHub at
+
+- https://github.com/hoxo-m/densratio.
 
 ## 3. Details
 
@@ -207,7 +214,7 @@ contour(range, range, z_true, main = "True Density Ratio")
 contour(range, range, z_hat, main = "Estimated Density Ratio")
 ```
 
-![](README_files/figure-html/unnamed-chunk-6-1.png)
+![](README_files/figure-html/unnamed-chunk-7-1.png)
 
 ```r
 par(old_par)

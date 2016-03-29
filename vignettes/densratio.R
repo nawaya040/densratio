@@ -20,6 +20,9 @@ plot(estimated_density_ratio, xlim=c(-1, 3), lwd=2, col="green", add=TRUE)
 legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, lty=1, lwd=2, pch=NA)
 
 ## ----eval=FALSE----------------------------------------------------------
+#  install.packages("densratio")
+
+## ----eval=FALSE----------------------------------------------------------
 #  install.packages("devtools") # if you have not installed "devtools" package
 #  devtools::install_github("hoxo-m/densratio")
 
