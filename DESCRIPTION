@@ -1,8 +1,8 @@
 Package: densratio
 Type: Package
-Version: 0.0.2
-Title: An R Package for Density Ratio Estimation
-Description: An R package for density ratio estimation.
+Version: 0.0.3
+Title: Density Ratio Estimation
+Description: Density ratio estimation.
     The estimated density ratio function can be used in many applications such as
     the inlier-based outlier detection, covariate shift adaptation and etc.
 Authors@R:
