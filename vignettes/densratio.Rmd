@@ -53,7 +53,7 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. How to Install
 
-You can install the **densratio** package from [CRAN](https://cran.r-project.org/web/packages/densratio/).
+You can install the **densratio** package from CRAN.
 
 ```{r eval=FALSE}
 install.packages("densratio")

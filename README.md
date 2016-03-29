@@ -38,6 +38,8 @@ result
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
+## Regularization Parameter(lambda):  0.1 
+## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
 ```
@@ -58,7 +60,7 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. How to Install
 
-You can install the **densratio** package from [CRAN](https://cran.r-project.org/web/packages/densratio/).
+You can install the **densratio** package from CRAN.
 
 
 ```r
@@ -138,7 +140,7 @@ As the result, you can obtain `compute_density_ratio()`.
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
-## Regularization Parameter(lambda):  
+## Regularization Parameter(lambda):  0.1 
 ## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
