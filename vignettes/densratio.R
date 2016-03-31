@@ -58,8 +58,7 @@ input <- expand.grid(range, range)
 z_true <- matrix(true_density_ratio(input), nrow = N)
 z_hat <- matrix(estimated_density_ratio(input), nrow = N)
 
-old_par <- par(mfrow = c(1, 2))
+par(mfrow = c(1, 2))
 contour(range, range, z_true, main = "True Density Ratio")
 contour(range, range, z_hat, main = "Estimated Density Ratio")
-par(old_par)
 
