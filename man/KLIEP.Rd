@@ -2,14 +2,14 @@
 % Please edit documentation in R/KLIEP.R
 \name{KLIEP}
 \alias{KLIEP}
-\title{Estimate Density Ratio p_nu(x)/p_de(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)}
+\title{Estimate Density Ratio p(x)/q(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)}
 \usage{
 KLIEP(x, y, sigma = "auto", kernel_num = 100, fold = 5, verbose = TRUE)
 }
 \arguments{
-\item{x}{numeric vector or matrix as data from a numerator distribution p_nu(x).}
+\item{x}{numeric vector or matrix as data from a numerator distribution p(x).}
 
-\item{y}{numeric vector or matrix as data from a denominator distribution p_de(y).}
+\item{y}{numeric vector or matrix as data from a denominator distribution q(y).}
 
 \item{sigma}{positive numeric vector as a search range of Gaussian kernel bandwidth.}
 
@@ -23,6 +23,6 @@ KLIEP(x, y, sigma = "auto", kernel_num = 100, fold = 5, verbose = TRUE)
 KLIEP object that contains the function to estimate density ratio.
 }
 \description{
-Estimate Density Ratio p_nu(x)/p_de(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)
+Estimate Density Ratio p(x)/q(y) by KLIEP (Kullback-Leibler Importance Estimation Procedure)
 }
 

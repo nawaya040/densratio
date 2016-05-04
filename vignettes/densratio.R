@@ -29,7 +29,14 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 ## ----eval=FALSE----------------------------------------------------------
 #  library(densratio)
 #  
+#  x <- rnorm(200, mean = 1, sd = 1/8)
+#  y <- rnorm(200, mean = 1, sd = 1/2)
+#  
 #  result <- densratio(x, y)
+
+## ----fig.width=5, fig.height=4-------------------------------------------
+w_hat <- result$compute_density_ratio(y)
+plot(y, w_hat)
 
 ## ----echo=FALSE----------------------------------------------------------
 result

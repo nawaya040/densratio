@@ -1,7 +1,7 @@
-#' Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)
+#' Estimate Density Ratio p(x)/q(y) by uLSIF (unconstrained Least-Square Importance Fitting)
 #'
-#' @param x numeric vector or matrix as data from a numerator distribution p_nu(x).
-#' @param y numeric vector or matrix as data from a denominator distribution p_de(y).
+#' @param x numeric vector or matrix as data from a numerator distribution p(x).
+#' @param y numeric vector or matrix as data from a denominator distribution q(y).
 #' @param sigma positive numeric vector as a search range of Gaussian kernel bandwidth.
 #' @param lambda positive numeric vector as a search range of regularization parameter.
 #' @param kernel_num positive integer as number of kernels.

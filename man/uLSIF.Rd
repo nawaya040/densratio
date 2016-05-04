@@ -2,15 +2,15 @@
 % Please edit documentation in R/uLSIF.R
 \name{uLSIF}
 \alias{uLSIF}
-\title{Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)}
+\title{Estimate Density Ratio p(x)/q(y) by uLSIF (unconstrained Least-Square Importance Fitting)}
 \usage{
 uLSIF(x, y, sigma = 10^seq(-3, 1, length.out = 9), lambda = 10^seq(-3, 1,
   length.out = 9), kernel_num = 100, verbose = TRUE)
 }
 \arguments{
-\item{x}{numeric vector or matrix as data from a numerator distribution p_nu(x).}
+\item{x}{numeric vector or matrix as data from a numerator distribution p(x).}
 
-\item{y}{numeric vector or matrix as data from a denominator distribution p_de(y).}
+\item{y}{numeric vector or matrix as data from a denominator distribution q(y).}
 
 \item{sigma}{positive numeric vector as a search range of Gaussian kernel bandwidth.}
 
@@ -24,6 +24,6 @@ uLSIF(x, y, sigma = 10^seq(-3, 1, length.out = 9), lambda = 10^seq(-3, 1,
 uLSIF object that contains the function to estimate density ratio.
 }
 \description{
-Estimate Density Ratio p_nu(x)/p_de(y) by uLSIF (unconstrained Least-Square Importance Fitting)
+Estimate Density Ratio p(x)/q(y) by uLSIF (unconstrained Least-Square Importance Fitting)
 }
 

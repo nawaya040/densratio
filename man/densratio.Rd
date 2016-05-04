@@ -2,15 +2,15 @@
 % Please edit documentation in R/densratio.R
 \name{densratio}
 \alias{densratio}
-\title{Estimate Density Ratio p_nu(x)/p_de(y)}
+\title{Estimate Density Ratio p(x)/q(y)}
 \usage{
 densratio(x, y, method = c("uLSIF", "KLIEP"), sigma = "auto",
   lambda = "auto", kernel_num = 100, fold = 5, verbose = TRUE)
 }
 \arguments{
-\item{x}{numeric vector or matrix as data from a numerator distribution p_nu(x).}
+\item{x}{numeric vector or matrix as data from a numerator distribution p(x).}
 
-\item{y}{numeric vector or matrix as data from a denominator distribution p_de(y).}
+\item{y}{numeric vector or matrix as data from a denominator distribution q(y).}
 
 \item{method}{"uLSIF"(default) or "KLIEP".}
 
@@ -28,7 +28,7 @@ densratio(x, y, method = c("uLSIF", "KLIEP"), sigma = "auto",
 densratio object that contains the function to estimate density ratio.
 }
 \description{
-Estimate Density Ratio p_nu(x)/p_de(y)
+Estimate Density Ratio p(x)/q(y)
 }
 \examples{
 set.seed(3)

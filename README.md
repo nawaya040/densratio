@@ -8,7 +8,7 @@ Koji MAKIYAMA (@hoxo_m)
 
 ## 1. Overview
 
-**Density ratio estimation** is described as follows: for given two data samples `x` and `y` from unknown distributions `p_nu(x)` and `p_de(y)` respectively, estimate `w(x) = p_nu(x) / p_de(x)`, where `x` and `y` are d-dimensional real numbers.
+**Density ratio estimation** is described as follows: for given two data samples `x` and `y` from unknown distributions `p(x)` and `q(y)` respectively, estimate `w(x) = p(x) / q(x)`, where `x` and `y` are d-dimensional real numbers.
 
 The estimated density ratio function `w(x)` can be used in many applications such as the inlier-based outlier detection [1] and covariate shift adaptation [2].
 Other useful applications about density ratio estimation were summarized by Sugiyama et al. (2012) [3].
@@ -42,8 +42,6 @@ result
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
-## Regularization Parameter(lambda):  0.1 
-## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
 ```
@@ -60,7 +58,7 @@ plot(estimated_density_ratio, xlim=c(-1, 3), lwd=2, col="green", add=TRUE)
 legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, lty=1, lwd=2, pch=NA)
 ```
 
-![](README_files/figure-html/unnamed-chunk-1-1.png)
+![](README_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 ## 2. How to Install
 
@@ -95,10 +93,21 @@ For data samples `x` and `y`,
 ```r
 library(densratio)
 
+x <- rnorm(200, mean = 1, sd = 1/8)
+y <- rnorm(200, mean = 1, sd = 1/2)
+
 result <- densratio(x, y)
 ```
 
-In this case, `result$compute_density_ratio()` can compute estimated density ratio.
+In this case, `result$compute_density_ratio()` can compute estimated density ratio.  
+
+
+```r
+w_hat <- result$compute_density_ratio(y)
+plot(y, w_hat)
+```
+
+![](README_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ### 3.2. Methods
 
@@ -144,7 +153,7 @@ As the result, you can obtain `compute_density_ratio()`.
 ## Kernel Weights(alpha):
 ##   num [1:100] 0.4044 0.0479 0.1736 0.125 0.0597 ...
 ## 
-## Regularization Parameter(lambda):  0.1 
+## Regularization Parameter(lambda):  
 ## 
 ## The Function to Estimate Density Ratio:
 ##   compute_density_ratio()
@@ -153,7 +162,7 @@ As the result, you can obtain `compute_density_ratio()`.
 - **Kernel type** is fixed by Gaussian RBF.
 - The **number of kernels** is the number of kernels in the linear model. You can change by setting `kernel_num` parameter. In default, `kernel_num = 100`.
 - **Bandwidth(sigma)** is the Gaussian kernel bandwidth. In default, `sigma = "auto"`, the algorithms automatically select the optimal value by cross validation. If you set `sigma` a number, that will be used. If you set a numeric vector, the algorithms select the optimal value in them by cross validation.
-- **Centers** are centers of Gaussian kernels in the linear model. These are selected at random from the data sample `x` underlying a numerator distribution `p_nu(x)`. You can find the whole values in `result$kernel_info$centers`. 
+- **Centers** are centers of Gaussian kernels in the linear model. These are selected at random from the data sample `x` underlying a numerator distribution `p(x)`. You can find the whole values in `result$kernel_info$centers`. 
 - **Kernel weights** are alpha parameters in the linear model. It is optimaized by the algorithms. You can find the whole values in `result$alpha`. 
 - **The funtion to estimate density ratio** is named `compute_density_ratio()`.
 
@@ -218,7 +227,7 @@ contour(range, range, z_true, main = "True Density Ratio")
 contour(range, range, z_hat, main = "Estimated Density Ratio")
 ```
 
-![](README_files/figure-html/unnamed-chunk-7-1.png)
+![](README_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 The dimensions of `x` and `y` must be same.
 

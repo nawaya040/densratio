@@ -1,7 +1,7 @@
-#' Estimate Density Ratio p_nu(x)/p_de(y)
+#' Estimate Density Ratio p(x)/q(y)
 #'
-#' @param x numeric vector or matrix as data from a numerator distribution p_nu(x).
-#' @param y numeric vector or matrix as data from a denominator distribution p_de(y).
+#' @param x numeric vector or matrix as data from a numerator distribution p(x).
+#' @param y numeric vector or matrix as data from a denominator distribution q(y).
 #' @param method "uLSIF"(default) or "KLIEP".
 #' @param sigma positive numeric vector as a search range of Gaussian kernel bandwidth.
 #' @param lambda positive numeric vector as a search range of regularization parameter for uLSIF.
