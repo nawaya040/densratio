@@ -3,6 +3,7 @@ Koji MAKIYAMA (@hoxo_m)
 
 
 
+[![Travis-CI Build Status](https://travis-ci.org/hoxo-m/densratio.svg?branch=master)](https://travis-ci.org/hoxo-m/densratio)
 [![CRAN Version](http://www.r-pkg.org/badges/version/densratio)](http://cran.rstudio.com/web/packages/densratio)
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/densratio)](http://cranlogs.r-pkg.org/badges/densratio)
 
