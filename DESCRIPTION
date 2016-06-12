@@ -1,6 +1,6 @@
 Package: densratio
 Type: Package
-Version: 0.0.3
+Version: 0.0.3.9001
 Title: Density Ratio Estimation
 Description: Density ratio estimation.
     The estimated density ratio function can be used in many applications such as
@@ -17,6 +17,7 @@ Suggests:
     knitr,
     mvtnorm,
     rmarkdown,
-    stats
+    stats,
+    testthat
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
