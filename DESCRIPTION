@@ -1,6 +1,6 @@
 Package: densratio
 Type: Package
-Version: 0.0.3.9001
+Version: 0.0.3.9002
 Title: Density Ratio Estimation
 Description: Density ratio estimation.
     The estimated density ratio function can be used in many applications such as

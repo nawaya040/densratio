@@ -12,7 +12,7 @@
 
 <meta name="author" content="Koji MAKIYAMA (@hoxo_m)" />
 
-<meta name="date" content="2016-05-05" />
+<meta name="date" content="2016-08-20" />
 
 <title>densratio - An R Package for Density Ratio Estimation</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">densratio - An R Package for Density Ratio Estimation</h1>
 <h4 class="author"><em>Koji MAKIYAMA (<span class="citation">@hoxo_m</span>)</em></h4>
-<h4 class="date"><em>2016-05-05</em></h4>
+<h4 class="date"><em>2016-08-20</em></h4>
 
 
 
@@ -191,7 +191,7 @@ K(x, c) = \exp\left(-\frac{\|x - c\|^2}{2 \sigma ^ 2}\right)
 ##   compute_density_ratio()</code></pre>
 <ul>
 <li><strong>Kernel type</strong> is fixed by Gaussian RBF.</li>
-<li>The <strong>number of kernels</strong> is the number of kernels in the linear model. You can change by setting <code>kernel_num</code> parameter. In default, <code>kernel_num = 100</code>.</li>
+<li><strong>Number of kernels</strong> is the number of kernels in the linear model. You can change by setting <code>kernel_num</code> parameter. In default, <code>kernel_num = 100</code>.</li>
 <li><strong>Bandwidth(sigma)</strong> is the Gaussian kernel bandwidth. In default, <code>sigma = &quot;auto&quot;</code>, the algorithms automatically select the optimal value by cross validation. If you set <code>sigma</code> a single number, it will be used. If you set a numeric vector, the algorithms select the optimal value in them by cross validation.</li>
 <li><strong>Centers</strong> are centers of Gaussian kernels in the linear model. These are selected at random from the data sample <code>x</code> underlying a numerator distribution <span class="math inline">\(p(x)\)</span>. You can find the whole values in <code>result$kernel_info$centers</code>.</li>
 <li><strong>Kernel weights</strong> are the alpha parameters in the linear model. It was optimaized by the algorithms. You can find the whole values in <code>result$alpha</code>.</li>

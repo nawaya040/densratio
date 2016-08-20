@@ -1,4 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^README.*$
+^README.html$
+^README.Rmd$
 ^\.travis\.yml$
+^README_.+$
