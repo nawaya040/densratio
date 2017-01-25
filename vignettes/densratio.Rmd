@@ -55,7 +55,8 @@ w_hat <- result$compute_density_ratio(new_x)
 plot(new_x, w_hat, pch=19)
 ```
 
-In this case, the true density ratio $w(x) = p(x)/q(y) = \rm{Norm}(1, 1/8) / \rm{Norm}(1, 1/2)$ can be computed precisely, so we can compare $w(x)$ with the estimated density ratio $\hat{w}(x)$.
+In this case, the true density ratio $w(x) = p(x)/q(y) = \rm{Norm}(1, 1/8) / \rm{Norm}(1, 1/2)$ can be computed precisely.
+So we can compare $w(x)$ with the estimated density ratio $\hat{w}(x)$.
 
 ```{r fig.width=5, fig.height=4}
 true_density_ratio <- function(x) dnorm(x, 1, 1/8) / dnorm(x, 1, 1/2)
