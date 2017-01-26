@@ -14,7 +14,7 @@ Koji MAKIYAMA (@hoxo_m)
 
 **Density ratio estimation** is described as follows: for given two data samples `x` and `y` from unknown distributions `p(x)` and `q(y)` respectively, estimate `w(x) = p(x) / q(x)`, where `x` and `y` are d-dimensional real numbers.
 
-The estimated density ratio function `w(x)` can be used in many applications such as anomaly detection [1] and covariate shift adaptation [2].
+The estimated density ratio function `w(x)` can be used in many applications such as **anomaly detection** [1] and **covariate shift adaptation** [2].
 Other useful applications about density ratio estimation were summarized by Sugiyama et al. (2012) [3].
 
 The package **densratio** provides a function `densratio()`.
@@ -37,7 +37,7 @@ The result object has a function `compute_density_ratio()` that can compute the 
 
 
 ```r
-new_x <- seq(0, 2, by = 0.05)
+new_x <- seq(0, 2, by = 0.06)
 w_hat <- result$compute_density_ratio(new_x)
 
 plot(new_x, w_hat, pch=19)
@@ -82,14 +82,24 @@ The source code for **densratio** package is available on GitHub at
 
 ## 3. Details
 
-There is a vignette for the package. For more detail, read the vignette.
+`densratio()` has `method` argument that you can pass `"uLSIF"` or `"KLIEP"`.
+
+- **uLSIF** (unconstrained Least-Squares Importance Fitting) is the default method.
+This algorithm estimates density ratio by minimizing the squared loss.
+You can find more information in Hido et al. (2011) [1].
+
+- **KLIEP** (Kullback-Leibler Importance Estimation Procedure) is the another method.
+This algorithm estimates density ratio by minimizing Kullback-Leibler divergence.
+You can find more information in Sugiyama et al. (2007) [2].
+
+There is a vignette for the package. For more detail, read it.
 
 
 ```r
 vignette("densratio")
 ```
 
-You can find the vignette on CRAN.
+You can also find it on CRAN.
 
 - [An R Package for Density Ratio Estimation](https://cran.r-project.org/web/packages/densratio/vignettes/densratio.html)
 
