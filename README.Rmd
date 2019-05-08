@@ -14,6 +14,7 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
+  fig.path = "man/figures/README-",
   message = FALSE
 )
 library(mvtnorm)
@@ -68,7 +69,7 @@ legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, l
 
 ## 2. Installation
 
-You can install the **densratio** package from [CRAN](https://cran.r-project.org/web/packages/densratio/index.html).
+You can install the **densratio** package from [CRAN](https://CRAN.R-project.org/package=densratio).
 
 ```{r eval=FALSE}
 install.packages("densratio")
@@ -105,7 +106,7 @@ vignette("densratio")
 
 You can also find it on CRAN.
 
-- [An R Package for Density Ratio Estimation](https://cran.r-project.org/web/packages/densratio/vignettes/densratio.html)
+- [An R Package for Density Ratio Estimation](https://CRAN.R-project.org/package=densratio/vignettes/densratio.html)
 
 ## 4. Related work
 

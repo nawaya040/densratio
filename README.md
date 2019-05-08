@@ -47,7 +47,7 @@ w_hat <- result$compute_density_ratio(new_x)
 plot(new_x, w_hat, pch=19)
 ```
 
-![](README_files/figure-gfm/compute-estimated-density-ratio-1.png)<!-- -->
+![](man/figures/README-compute-estimated-density-ratio-1.png)<!-- -->
 
 In this case, the true density ratio `w(x) = p(x)/q(y) = Norm(1, 1/8) /
 Norm(1, 1/2)` can be computed precisely. So we can compare `w(x)` with
@@ -61,12 +61,12 @@ plot(result$compute_density_ratio, xlim=c(-1, 3), lwd=2, col="green", add=TRUE)
 legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, lty=1, lwd=2, pch=NA)
 ```
 
-![](README_files/figure-gfm/compare-true-estimate-1.png)<!-- -->
+![](man/figures/README-compare-true-estimate-1.png)<!-- -->
 
 ## 2\. Installation
 
 You can install the **densratio** package from
-[CRAN](https://cran.r-project.org/web/packages/densratio/index.html).
+[CRAN](https://CRAN.R-project.org/package=densratio).
 
 ``` r
 install.packages("densratio")
@@ -108,7 +108,7 @@ vignette("densratio")
 You can also find it on CRAN.
 
   - [An R Package for Density Ratio
-    Estimation](https://cran.r-project.org/web/packages/densratio/vignettes/densratio.html)
+    Estimation](https://CRAN.R-project.org/package=densratio/vignettes/densratio.html)
 
 ## 4\. Related work
 

@@ -11,8 +11,8 @@ test_that("uLSIF", {
   sigma <- result$kernel_info$sigma
   lambda <- result$lambda
 
-  expected_alpha <- c(0.08770412, 0.00000000, 0.07556255,
-                      0.01371470, 0.00000000, 0.00000000)
+  expected_alpha <- c(0.0674550859, 0.0400446153, 0.0004589047,
+                      0.0168489465, 0.0670843163, 0.0189929309)
 
   expect_equal(head(alpha), expected_alpha)
   expect_equal(sigma, 0.1)

@@ -2,4 +2,4 @@
 
 ## Bug fixes
 
-* Modify Euclidean distance to square Euclidean distance in the function that computes Gaussian kernel (#6). It affects all algorithms in the packages.
+* Modify Euclidean distance to square Euclidean distance in the function that computes Gaussian kernel (#6, @ya103). It affects all algorithms in the packages.
