@@ -5,7 +5,7 @@ output:
   md_document:
     variant: gfm
   html_document:
-    keep_md: yes
+    keep_md: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -21,7 +21,7 @@ library(mvtnorm)
 ```
 
 [![Travis-CI Build Status](https://travis-ci.org/hoxo-m/densratio.svg?branch=master)](https://travis-ci.org/hoxo-m/densratio)
-[![CRAN Version](http://www.r-pkg.org/badges/version/densratio)](http://cran.rstudio.com/web/packages/densratio)
+[![CRAN Version](http://www.r-pkg.org/badges/version/densratio)](https://CRAN.R-project.org/package=densratio)
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/densratio)](http://cranlogs.r-pkg.org/badges/densratio)
 [![Coverage Status](https://coveralls.io/repos/github/hoxo-m/densratio/badge.svg?branch=master)](https://coveralls.io/github/hoxo-m/densratio?branch=master)
 
