@@ -42,4 +42,3 @@ estimated_density_ratio <- result$compute_density_ratio(new_x)
 plot(new_x, estimated_density_ratio, pch=19)
 
 }
-

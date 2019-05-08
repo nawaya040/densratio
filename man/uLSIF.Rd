@@ -4,8 +4,8 @@
 \alias{uLSIF}
 \title{Estimate Density Ratio p(x)/q(y) by uLSIF (unconstrained Least-Square Importance Fitting)}
 \usage{
-uLSIF(x, y, sigma = 10^seq(-3, 1, length.out = 9), lambda = 10^seq(-3, 1,
-  length.out = 9), kernel_num = 100, verbose = TRUE)
+uLSIF(x, y, sigma = 10^seq(-3, 1, length.out = 9), lambda = 10^seq(-3,
+  1, length.out = 9), kernel_num = 100, verbose = TRUE)
 }
 \arguments{
 \item{x}{numeric vector or matrix. Data from a numerator distribution p(x).}
@@ -26,4 +26,3 @@ uLSIF object that contains a function to compute estimated density ratio.
 \description{
 Estimate Density Ratio p(x)/q(y) by uLSIF (unconstrained Least-Square Importance Fitting)
 }
-

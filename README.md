@@ -1,5 +1,12 @@
-# An R Package for Density Ratio Estimation
-Koji MAKIYAMA (@hoxo_m)  
+---
+title: "An R Package for Density Ratio Estimation"
+author: Koji MAKIYAMA (@hoxo_m)
+output: 
+  html_document:
+    keep_md: yes
+  md_document:
+    variant: markdown_github
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
