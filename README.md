@@ -1,15 +1,13 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 [![Travis-CI Build
 Status](https://travis-ci.org/hoxo-m/densratio.svg?branch=master)](https://travis-ci.org/hoxo-m/densratio)
 [![CRAN
 Version](http://www.r-pkg.org/badges/version/densratio)](http://cran.rstudio.com/web/packages/densratio)
-[![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/densratio)](http://cranlogs.r-pkg.org/badges/densratio)
-[![Coverage
+<http://cranlogs.r-pkg.org/badges/densratio> [![Coverage
 Status](https://coveralls.io/repos/github/hoxo-m/densratio/badge.svg?branch=master)](https://coveralls.io/github/hoxo-m/densratio?branch=master)
 
-1. Overview
------------
+## 1\. Overview
 
 **Density ratio estimation** is described as follows: for given two data
 samples `x` and `y` from unknown distributions `p(x)` and `q(y)`
@@ -49,12 +47,11 @@ w_hat <- result$compute_density_ratio(new_x)
 plot(new_x, w_hat, pch=19)
 ```
 
-![](README_files/figure-markdown_github/compute-estimated-density-ratio-1.png)
+![](README_files/figure-gfm/compute-estimated-density-ratio-1.png)<!-- -->
 
-In this case, the true density ratio
-`w(x) = p(x)/q(y) = Norm(1, 1/8) / Norm(1, 1/2)` can be computed
-precisely. So we can compare `w(x)` with the estimated density ratio
-`w_hat(x)`.
+In this case, the true density ratio `w(x) = p(x)/q(y) = Norm(1, 1/8) /
+Norm(1, 1/2)` can be computed precisely. So we can compare `w(x)` with
+the estimated density ratio `w_hat(x)`.
 
 ``` r
 true_density_ratio <- function(x) dnorm(x, 1, 1/8) / dnorm(x, 1, 1/2)
@@ -64,10 +61,9 @@ plot(result$compute_density_ratio, xlim=c(-1, 3), lwd=2, col="green", add=TRUE)
 legend("topright", legend=c(expression(w(x)), expression(hat(w)(x))), col=2:3, lty=1, lwd=2, pch=NA)
 ```
 
-![](README_files/figure-markdown_github/compare-true-estimate-1.png)
+![](README_files/figure-gfm/compare-true-estimate-1.png)<!-- -->
 
-2. Installation
----------------
+## 2\. Installation
 
 You can install the **densratio** package from
 [CRAN](https://cran.r-project.org/web/packages/densratio/index.html).
@@ -86,20 +82,19 @@ devtools::install_github("hoxo-m/densratio")
 
 The source code for **densratio** package is available on GitHub at
 
--   <a href="https://github.com/hoxo-m/densratio" class="uri">https://github.com/hoxo-m/densratio</a>.
+  - <https://github.com/hoxo-m/densratio>.
 
-3. Details
-----------
+## 3\. Details
 
 `densratio()` has `method` argument that you can pass `"uLSIF"` or
 `"KLIEP"`.
 
--   **uLSIF** (unconstrained Least-Squares Importance Fitting) is the
+  - **uLSIF** (unconstrained Least-Squares Importance Fitting) is the
     default method. This algorithm estimates density ratio by minimizing
-    the squared loss. You can find more information in Hido et
-    al. (2011) \[1\].
+    the squared loss. You can find more information in Hido et al.
+    (2011) \[1\].
 
--   **KLIEP** (Kullback-Leibler Importance Estimation Procedure) is the
+  - **KLIEP** (Kullback-Leibler Importance Estimation Procedure) is the
     another method. This algorithm estimates density ratio by minimizing
     Kullback-Leibler divergence. You can find more information in
     Sugiyama et al. (2007) \[2\].
@@ -112,22 +107,20 @@ vignette("densratio")
 
 You can also find it on CRAN.
 
--   [An R Package for Density Ratio
+  - [An R Package for Density Ratio
     Estimation](https://cran.r-project.org/web/packages/densratio/vignettes/densratio.html)
 
-4. Related work
----------------
+## 4\. Related work
 
 We have also developed a Python package for density ratio estimation.
 
--   <a href="https://github.com/hoxo-m/densratio_py" class="uri">https://github.com/hoxo-m/densratio_py</a>
+  - <https://github.com/hoxo-m/densratio_py>
 
 The package is available on PyPI (Python Package Index).
 
--   <a href="https://pypi.python.org/pypi/densratio" class="uri">https://pypi.python.org/pypi/densratio</a>
+  - <https://pypi.python.org/pypi/densratio>
 
-5. References
--------------
+## 5\. References
 
 \[1\] Hido, S., Tsuboi, Y., Kashima, H., Sugiyama, M., & Kanamori, T.
 **Statistical outlier detection using direct density ratio estimation.**
