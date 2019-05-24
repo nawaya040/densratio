@@ -1,11 +1,22 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# An R Package for Density Ratio Estimation
+
+#### *Koji MAKIYAMA (@hoxo\_m)*
+
+<!-- badges: start -->
+
 [![Travis-CI Build
 Status](https://travis-ci.org/hoxo-m/densratio.svg?branch=master)](https://travis-ci.org/hoxo-m/densratio)
 [![CRAN
 Version](http://www.r-pkg.org/badges/version/densratio)](https://CRAN.R-project.org/package=densratio)
-<http://cranlogs.r-pkg.org/badges/densratio> [![Coverage
+[![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/densratio)](http://cranlogs.r-pkg.org/badges/densratio/)
+[![Coverage
 Status](https://coveralls.io/repos/github/hoxo-m/densratio/badge.svg?branch=master)](https://coveralls.io/github/hoxo-m/densratio?branch=master)
+[![Say
+Thanks\!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/hoxo-m)
+<!-- badges: end -->
 
 ## 1\. Overview
 
