@@ -4,25 +4,28 @@
 \alias{densratio}
 \title{Estimate Density Ratio p(x)/q(y)}
 \usage{
-densratio(x, y, method = c("uLSIF", "KLIEP"), sigma = "auto",
-  lambda = "auto", kernel_num = 100, fold = 5, verbose = TRUE)
+densratio(x, y, method = c("uLSIF", "RuLSIF", "KLIEP"), sigma = "auto",
+  lambda = "auto", alpha = 0.1, kernel_num = 100, fold = 5,
+  verbose = TRUE)
 }
 \arguments{
 \item{x}{numeric vector or matrix. Data from a numerator distribution p(x).}
 
 \item{y}{numeric vector or matrix. Data from a denominator distribution q(y).}
 
-\item{method}{"uLSIF"(default) or "KLIEP".}
+\item{method}{"uLSIF" (default), "KLIEP", or "RuLSIF".}
 
 \item{sigma}{positive numeric vector. Search range of Gaussian kernel bandwidth.}
 
-\item{lambda}{positive numeric vector. Search range of regularization parameter for uLSIF.}
+\item{lambda}{positive numeric vector. Search range of regularization parameter for uLSIF and RuLSIF.}
+
+\item{alpha}{numeric in [0, 1]. Relative parameter for RuLSIF. Default 0.1.}
 
 \item{kernel_num}{positive integer. Number of kernels.}
 
 \item{fold}{positive integer. Numer of the folds of cross validation for KLIEP.}
 
-\item{verbose}{logical(default TRUE).}
+\item{verbose}{logical (default TRUE).}
 }
 \value{
 densratio object that contains a function to compute estimated density ratio.

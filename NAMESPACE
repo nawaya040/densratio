@@ -2,6 +2,7 @@
 
 S3method(print,densratio)
 export(KLIEP)
+export(RuLSIF)
 export(densratio)
 export(uLSIF)
 importFrom(utils,str)
