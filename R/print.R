@@ -13,15 +13,26 @@ print.densratio <- function(x, digits = 3L, ...) {
   str(info$centers, digits.d = digits, give.attr = FALSE)
   cat("\n")
 
-  cat("Kernel Weights(alpha):\n ")
-  str(x$alpha, digits.d = digits, give.attr = FALSE)
-  cat("\n")
 
   if("uLSIF" %in% class(x)) {
+    cat("Kernel Weights:\n ")
+    str(x$alpha, digits.d = digits, give.attr = FALSE)
+    cat("\n")
     cat("Regularization Parameter(lambda): ", x$lambda, "\n\n")
   }
 
+  if("RuLSIF" %in% class(x)) {
+    cat("Kernel Weights:\n ")
+    str(x$kernel_weights, digits.d = digits, give.attr = FALSE)
+    cat("\n")
+    cat("Regularization Parameter (lambda): ", x$lambda, "\n\n")
+    cat("Relative Parameter (alpha): ", x$alpha, "\n\n")
+  }
+
   if("KLIEP" %in% class(x)) {
+    cat("Kernel Weights:\n ")
+    str(x$alpha, digits.d = digits, give.attr = FALSE)
+    cat("\n")
     cat("Number of the Folds: ", x$fold, "\n\n")
   }
 
