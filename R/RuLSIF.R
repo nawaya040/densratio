@@ -17,10 +17,10 @@ RuLSIF <- function(x1, x2,
                   lambda = 10 ^ seq(-3, 1, length.out = 9),
                   alpha = 0.1, kernel_num = 100, verbose = TRUE) {
 
-  if(verbose) message("################## Start RuLSIF ##################")
-  if(is.vector(x1)) x1 <- matrix(x1)
-  if(is.vector(x2)) x2 <- matrix(x2)
-  if(ncol(x1) != ncol(x2)) stop("x1 and x2 must be same dimensions.")
+  if (verbose) message("################## Start RuLSIF ##################")
+  if (is.vector(x1)) x1 <- matrix(x1)
+  if (is.vector(x2)) x2 <- matrix(x2)
+  if (ncol(x1) != ncol(x2)) stop("x1 and x2 must be same dimensions.")
 
   nx1 <- nrow(x1)
   nx2 <- nrow(x2)
