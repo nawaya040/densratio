@@ -2,7 +2,7 @@
 
 ## New feature
 
-* Implement RuSLIF [Yamada et al. 2011] to estimate relative density ratio.
+* Implement RuLSIF [Yamada et al. 2011] to estimate relative density ratio.
 
 # densratio 0.1.1
 
