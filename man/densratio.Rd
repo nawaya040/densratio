@@ -2,18 +2,18 @@
 % Please edit documentation in R/densratio.R
 \name{densratio}
 \alias{densratio}
-\title{Estimate Density Ratio p(x)/q(y)}
+\title{Estimate Density Ratio p(x)/q(x)}
 \usage{
-densratio(x, y, method = c("uLSIF", "RuLSIF", "KLIEP"), sigma = "auto",
-  lambda = "auto", alpha = 0.1, kernel_num = 100, fold = 5,
-  verbose = TRUE)
+densratio(x1, x2, method = c("uLSIF", "RuLSIF", "KLIEP"),
+  sigma = "auto", lambda = "auto", alpha = 0.1, kernel_num = 100,
+  fold = 5, verbose = TRUE)
 }
 \arguments{
-\item{x}{numeric vector or matrix. Data from a numerator distribution p(x).}
+\item{x1}{numeric vector or matrix. Data from a numerator distribution p(x).}
 
-\item{y}{numeric vector or matrix. Data from a denominator distribution q(y).}
+\item{x2}{numeric vector or matrix. Data from a denominator distribution q(x).}
 
-\item{method}{"uLSIF" (default), "KLIEP", or "RuLSIF".}
+\item{method}{"uLSIF" (default), "RuLSIF", or "KLIEP".}
 
 \item{sigma}{positive numeric vector. Search range of Gaussian kernel bandwidth.}
 
@@ -31,16 +31,16 @@ densratio(x, y, method = c("uLSIF", "RuLSIF", "KLIEP"), sigma = "auto",
 densratio object that contains a function to compute estimated density ratio.
 }
 \description{
-Estimate Density Ratio p(x)/q(y)
+Estimate Density Ratio p(x)/q(x)
 }
 \examples{
-x <- rnorm(200, mean = 1, sd = 1/8)
-y <- rnorm(200, mean = 1, sd = 1/2)
+x1 <- rnorm(200, mean = 1, sd = 1/8)
+x2 <- rnorm(200, mean = 1, sd = 1/2)
 
-result <- densratio(x, y)
+densratio_obj <- densratio(x1, x2)
 
-new_x <- seq(0, 2, by = 0.06)
-estimated_density_ratio <- result$compute_density_ratio(new_x)
+new_x <- seq(0, 2, by = 0.05)
+estimated_density_ratio <- densratio_obj$compute_density_ratio(new_x)
 
 plot(new_x, estimated_density_ratio, pch=19)
 
