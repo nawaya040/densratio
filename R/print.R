@@ -1,14 +1,16 @@
 #' @importFrom utils str
 #' @export
 print.densratio <- function(x, digits = 3L, ...) {
-  cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"),
-      "\n\n", sep = "")
+  if (!is.null(x$call)) {
+    cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"),
+        "\n\n", sep = "")
+  }
 
   info <- x$kernel_info
   cat("Kernel Information:\n")
   cat("  Kernel type: ", info$kernel, "\n")
   cat("  Number of kernels: ", info$kernel_num, "\n")
-  cat("  Bandwidth(sigma): ", format(info$sigma, digits = digits), "\n")
+  cat("  Bandwidth (sigma): ", format(info$sigma, digits = digits), "\n")
   cat("  Centers: ")
   str(info$centers, digits.d = digits, give.attr = FALSE)
   cat("\n")
@@ -16,12 +18,12 @@ print.densratio <- function(x, digits = 3L, ...) {
   str(x$kernel_weights, digits.d = digits, give.attr = FALSE)
   cat("\n")
 
-  if("uLSIF" %in% class(x)) {
+  if ("uLSIF" %in% class(x)) {
     cat("Regularization Parameter (lambda): ", x$lambda, "\n\n")
-  } else if("RuLSIF" %in% class(x)) {
-    cat("Regularization Parameter (lambda): ", x$lambda, "\n\n")
+  } else if ("RuLSIF" %in% class(x)) {
+    cat("Regularization Parameter (lambda): ", x$lambda, "\n")
     cat("Relative Parameter (alpha): ", x$alpha, "\n\n")
-  } else if("KLIEP" %in% class(x)) {
+  } else if ("KLIEP" %in% class(x)) {
     cat("Number of the Folds: ", x$fold, "\n\n")
   }
 
@@ -31,3 +33,12 @@ print.densratio <- function(x, digits = 3L, ...) {
   cat("\n")
   invisible(x)
 }
+
+#' @export
+print.KLIEP <- print.densratio
+
+#' @export
+print.uLSIF <- print.densratio
+
+#' @export
+print.RuLSIF <- print.densratio
