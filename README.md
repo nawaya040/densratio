@@ -26,9 +26,10 @@ respectively, estimate `w(x) = p(x) / q(x)`, where `x` and `y` are
 d-dimensional real numbers.
 
 The estimated density ratio function `w(x)` can be used in many
-applications such as **anomaly detection** \[1\] and **covariate shift
-adaptation** \[2\]. Other useful applications about density ratio
-estimation were summarized by Sugiyama et al. (2012) \[3\].
+applications such as **anomaly detection** \[Hido et al. 2011\],
+**changepoint detection** \[Liu et al. 2013\], and **covariate shift
+adaptation** \[Sugiyama et al. 2007\]. Other useful applications about
+density ratio estimation were summarized by \[Sugiyama et al. 2012\].
 
 The package **densratio** provides a function `densratio()`. The
 function outputs an object that has a function to estimate density
@@ -97,18 +98,23 @@ The source code for **densratio** package is available on GitHub at
 
 ## 3\. Details
 
-`densratio()` has `method` argument that you can pass `"uLSIF"` or
-`"KLIEP"`.
+`densratio()` has `method` argument that you can pass `"uLSIF"`,
+`"RuSLIF"`, or `"KLIEP"`.
 
   - **uLSIF** (unconstrained Least-Squares Importance Fitting) is the
     default method. This algorithm estimates density ratio by minimizing
-    the squared loss. You can find more information in Hido et al.
-    (2011) \[1\].
+    the squared loss. You can find more information in \[Kanamori et
+    al. 2009\] and \[Hido et al. 2011\].
 
-  - **KLIEP** (Kullback-Leibler Importance Estimation Procedure) is the
-    another method. This algorithm estimates density ratio by minimizing
-    Kullback-Leibler divergence. You can find more information in
-    Sugiyama et al. (2007) \[2\].
+  - **RuLSIF** (Relative unconstrained Least-Squares Importance
+    Fitting). This algorithm estimates relative density ratio by
+    minimizing the squared loss. You can find more information in
+    \[Yamada et al. 2011\] and \[Liu et al. 2013\].
+
+  - **KLIEP** (Kullback-Leibler Importance Estimation Procedure). This
+    algorithm estimates density ratio by minimizing Kullback-Leibler
+    divergence. You can find more information in \[Sugiyama et
+    al. 2007\].
 
 There is a vignette for the package. For more detail, read it.
 
@@ -133,13 +139,20 @@ The package is available on PyPI (Python Package Index).
 
 ## 5\. References
 
-\[1\] Hido, S., Tsuboi, Y., Kashima, H., Sugiyama, M., & Kanamori, T.
-**Statistical outlier detection using direct density ratio estimation.**
-Knowledge and Information Systems 2011.
-
-\[2\] Sugiyama, M., Nakajima, S., Kashima, H., von Bünau, P. & Kawanabe,
-M. **Direct importance estimation with model selection and its
-application to covariate shift adaptation.** NIPS 2007.
-
-\[3\] Sugiyama, M., Suzuki, T. & Kanamori, T. **Density Ratio Estimation
-in Machine Learning.** Cambridge University Press 2012.
+  - Hido, S., Y. Tsuboi, H. Kashima, M. Sugiyama, and T. Kanamori.
+    **Statistical outlier detection using direct density ratio
+    estimation.** Knowledge and Information Systems, 2011.
+  - Kanamori, T., S. Hido, and M. Sugiyama. **A least-squares approach
+    to direct importance estimation.** Journal of Machine Learning
+    Research, 2009.
+  - Liu, S., M. Yamada, N. Collier, M. Sugiyama. **Change-point
+    detection in time-series data by relative density-ratio
+    estimation.** Neural Net, 2013
+  - Sugiyama, M., S. Nakajima, H. Kashima, P. von Bünau, and M.
+    Kawanabe. **Direct importance estimation with model selection and
+    its application to covariate shift adaptation.** NIPS 2007.
+  - Sugiyama, M., T. Suzuki, and T. Kanamori. **Density ratio estimation
+    in machine learning.** Cambridge University Press, 2012.
+  - Yamada, M., T. Suzuki, T. Kanamori, H. Hachiya, and M. Sugiyama.
+    **Relative density-ratio estimation for robust distribution
+    comparison.** NIPS 2011.

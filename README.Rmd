@@ -132,23 +132,18 @@ The package is available on PyPI (Python Package Index).
 - Hido, S., Y. Tsuboi, H. Kashima, M. Sugiyama, and T. Kanamori.
 **Statistical outlier detection using direct density ratio estimation.**
 Knowledge and Information Systems, 2011.
-
 - Kanamori, T., S. Hido, and M. Sugiyama.
-**A Least-squares Approach to Direct Importance Estimation.**
+**A least-squares approach to direct importance estimation.**
 Journal of Machine Learning Research, 2009.
-
 - Liu, S., M. Yamada, N. Collier, M. Sugiyama.
 **Change-point detection in time-series data by relative density-ratio estimation.**
 Neural Net, 2013
-
 - Sugiyama, M., S. Nakajima, H. Kashima, P. von Bünau, and M. Kawanabe. 
 **Direct importance estimation with model selection and its application to covariate shift adaptation.**
 NIPS 2007.
-
 - Sugiyama, M., T. Suzuki, and T. Kanamori. 
-**Density Ratio Estimation in Machine Learning.**
+**Density ratio estimation in machine learning.**
 Cambridge University Press, 2012.
-
 - Yamada, M., T. Suzuki, T. Kanamori, H. Hachiya, and M. Sugiyama.
-**Relative Density-Ratio Estimation for Robust Distribution Comparison.**
+**Relative density-ratio estimation for robust distribution comparison.**
 NIPS 2011.
