@@ -14,6 +14,7 @@ test_that("RuLSIF", {
   expected_kernel_weights <- c(0.070454411, 0.028303149, 0.003146211,
                                0.010641579, 0.055200243, 0.012069721)
 
+  testthat::skip_on_cran()
   expect_equal(head(kernel_weights), expected_kernel_weights)
   expect_equal(sigma, 0.1)
   expect_equal(lambda, 0.1)

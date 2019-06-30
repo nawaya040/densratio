@@ -25,7 +25,7 @@ $$
 
 where $x1$ and $x2$ are $d$-dimensional real numbers.
 
-The estimated density ratio function $w(x)$ can be used in many applications such as **anomaly detection** [Hido et al. 2011], **changepoint detection** [Liu et al. 2013], and **covariate shift adaptation** [Sugiyama et al. 2007].
+The estimated density ratio function $w(x)$ can be used in many applications such as **anomaly detection** [Hido et al. 2011], **change-point detection** [Liu et al. 2013], and **covariate shift adaptation** [Sugiyama et al. 2007].
 Other useful applications about density ratio estimation were summarized by [Sugiyama et al. 2012].
 
 The package **densratio** provides a function `densratio()` that returns an object with a method to estimate density ratio as `compute_density_ratio()`.

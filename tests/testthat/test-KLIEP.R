@@ -14,6 +14,7 @@ test_that("KLIEP", {
   expected_kernel_weights <- c(0.0885607375, 0.0178664639, 0.0240389107,
                                0.0000000000, 0.0810753470, 0.0001353598)
 
+  testthat::skip_on_cran()
   expect_equal(head(kernel_weights), expected_kernel_weights)
   expect_equal(sigma, 0.09)
 })

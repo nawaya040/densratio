@@ -4,8 +4,8 @@
 #' @param x2 numeric vector or matrix. Data from a denominator distribution q(x).
 #' @param sigma positive numeric vector. Search range of Gaussian kernel bandwidth.
 #' @param kernel_num positive integer. Number of kernels.
-#' @param fold positive integer. Numer of the folds of cross validation.
-#' @param verbose logical(default TRUE).
+#' @param fold positive integer. Number of the folds of cross validation.
+#' @param verbose logical (default TRUE).
 #'
 #' @return KLIEP object that contains a function to compute estimated density ratio.
 #'

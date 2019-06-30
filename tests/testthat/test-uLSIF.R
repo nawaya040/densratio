@@ -14,6 +14,7 @@ test_that("uLSIF", {
   expected_kernel_weights <- c(0.0674550859, 0.0400446153, 0.0004589047,
                                0.0168489465, 0.0670843163, 0.0189929309)
 
+  testthat::skip_on_cran()
   expect_equal(head(kernel_weights), expected_kernel_weights)
   expect_equal(sigma, 0.1)
   expect_equal(lambda, 1)

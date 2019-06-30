@@ -9,9 +9,9 @@
 [![Travis-CI Build
 Status](https://travis-ci.org/hoxo-m/densratio.svg?branch=master)](https://travis-ci.org/hoxo-m/densratio)
 [![CRAN
-Version](http://www.r-pkg.org/badges/version/densratio)](https://CRAN.R-project.org/package=densratio)
+Version](https://www.r-pkg.org/badges/version/densratio)](https://CRAN.R-project.org/package=densratio)
 [![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/densratio)](http://cranlogs.r-pkg.org/badges/densratio/)
+Downloads](https://cranlogs.r-pkg.org/badges/densratio)](https://CRAN.R-project.org/package=densratio)
 [![Coverage
 Status](https://coveralls.io/repos/github/hoxo-m/densratio/badge.svg?branch=master)](https://coveralls.io/github/hoxo-m/densratio?branch=master)
 [![Say

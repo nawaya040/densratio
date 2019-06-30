@@ -16,9 +16,9 @@ KLIEP(x1, x2, sigma = "auto", kernel_num = 100, fold = 5,
 
 \item{kernel_num}{positive integer. Number of kernels.}
 
-\item{fold}{positive integer. Numer of the folds of cross validation.}
+\item{fold}{positive integer. Number of the folds of cross validation.}
 
-\item{verbose}{logical(default TRUE).}
+\item{verbose}{logical (default TRUE).}
 }
 \value{
 KLIEP object that contains a function to compute estimated density ratio.
