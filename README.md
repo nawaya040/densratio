@@ -27,7 +27,7 @@ d-dimensional real numbers.
 
 The estimated density ratio function `w(x)` can be used in many
 applications such as **anomaly detection** \[Hido et al. 2011\],
-**changepoint detection** \[Liu et al. 2013\], and **covariate shift
+**change-point detection** \[Liu et al. 2013\], and **covariate shift
 adaptation** \[Sugiyama et al. 2007\]. Other useful applications about
 density ratio estimation were summarized by \[Sugiyama et al. 2012\].
 
@@ -173,7 +173,7 @@ is the Gaussian (RBF) kernel.
     #> Kernel Information:
     #>   Kernel type:  Gaussian 
     #>   Number of kernels:  100 
-    #>   Bandwidth(sigma):  0.1 
+    #>   Bandwidth (sigma):  0.1 
     #>   Centers:  num [1:100, 1] 0.907 1.093 1.18 1.136 1.046 ...
     #> 
     #> Kernel Weights:
