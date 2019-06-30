@@ -30,15 +30,15 @@ KLIEP <- function(x, y, sigma = "auto", kernel_num = 100, fold = 5, verbose = TR
     if(verbose) message(sprintf("Found optimal sigma = %.5f.", sigma))
   }
 
-  if(verbose) message("Optimizing alpha...")
+  if(verbose) message("Optimizing kernel weights...")
   phi_x <- compute_kernel_Gaussian(x, centers, sigma)
   phi_y <- compute_kernel_Gaussian(y, centers, sigma)
-  alpha <- KLIEP_optimize_alpha(phi_x, phi_y)
+  kernel_weights <- KLIEP_optimize_alpha(phi_x, phi_y)
   if(verbose) message("End.")
 
-  result <- list(alpha = alpha,
+  result <- list(kernel_weights = as.vector(kernel_weights),
                  kernel_info = list(
-                   kernel = "Gaussian RBF",
+                   kernel = "Gaussian",
                    kernel_num = kernel_num,
                    sigma = sigma,
                    centers = centers
@@ -47,7 +47,7 @@ KLIEP <- function(x, y, sigma = "auto", kernel_num = 100, fold = 5, verbose = TR
                  compute_density_ratio = function(x) {
                    if(is.vector(x)) x <- matrix(x)
                    phi_x <- compute_kernel_Gaussian(x, centers, sigma)
-                   density_ratio <- as.vector(phi_x %*% alpha)
+                   density_ratio <- as.vector(phi_x %*% kernel_weights)
                    density_ratio
                  }
   )

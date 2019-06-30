@@ -12,31 +12,20 @@ print.densratio <- function(x, digits = 3L, ...) {
   cat("  Centers: ")
   str(info$centers, digits.d = digits, give.attr = FALSE)
   cat("\n")
-
+  cat("Kernel Weights:\n ")
+  str(x$kernel_weights, digits.d = digits, give.attr = FALSE)
+  cat("\n")
 
   if("uLSIF" %in% class(x)) {
-    cat("Kernel Weights:\n ")
-    str(x$alpha, digits.d = digits, give.attr = FALSE)
-    cat("\n")
-    cat("Regularization Parameter(lambda): ", x$lambda, "\n\n")
-  }
-
-  if("RuLSIF" %in% class(x)) {
-    cat("Kernel Weights:\n ")
-    str(x$kernel_weights, digits.d = digits, give.attr = FALSE)
-    cat("\n")
+    cat("Regularization Parameter (lambda): ", x$lambda, "\n\n")
+  } else if("RuLSIF" %in% class(x)) {
     cat("Regularization Parameter (lambda): ", x$lambda, "\n\n")
     cat("Relative Parameter (alpha): ", x$alpha, "\n\n")
-  }
-
-  if("KLIEP" %in% class(x)) {
-    cat("Kernel Weights:\n ")
-    str(x$alpha, digits.d = digits, give.attr = FALSE)
-    cat("\n")
+  } else if("KLIEP" %in% class(x)) {
     cat("Number of the Folds: ", x$fold, "\n\n")
   }
 
-  cat("The Function to Estimate Density Ratio:\n")
+  cat("Function to Estimate Density Ratio:\n")
   cat("  compute_density_ratio()\n")
 
   cat("\n")
